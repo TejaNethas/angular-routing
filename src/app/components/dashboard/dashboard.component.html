@@ -29,4 +29,42 @@
         </tbody>
     </table>
 </div>
+<br/>
+<div class="container">
+    <div>
+        <label>Search Data :</label>
+        <input type="text" (keyup)="userEnterData($event)" placeholder="search for emp data" [(ngModel)]="name" />
+    </div>
+    <br/>
+    <!-- <ng-container *ngIf="(items | customFilter :name) as someDataExpected">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let userNames of someDataExpected">
+                    <td>{{userNames.name}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p *ngIf="someDataExpected.length === 0">No Results Found</p>
+    </ng-container> -->
+
+
+    <ng-container *ngIf="( items | customFilter : name) as result">
+        <p *ngFor="let item of result">
+            {{item.name | uppercase}}
+        </p>
+
+
+        <p *ngIf="result.length === 0">No Result</p>
+    </ng-container>
+
+
+
+
+</div>
 <app-footer></app-footer>

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule} from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { CustomFilterPipe } from './custom-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -22,13 +24,15 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     ChildComponent,
     SbilingComponent,
     PagenotfoundComponent,
-    DashboardComponent
+    DashboardComponent,
+    CustomFilterPipe
   ],
   imports: [
     BrowserModule,
     RouterModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule
     
   ],
   providers: [],
